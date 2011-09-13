@@ -35,9 +35,9 @@ module Faker
 
 
         [
-            Proc.new { Name.eng_first_name.gsub(/\W/, '').downcase },
+            Proc.new { to_eng(Name.first_name).gsub(/\W/, '').downcase },
             Proc.new {
-              [Name.eng_first_name, Name.eng_last_name].map { |n|
+              [to_eng(Name.first_name), to_eng(Name.last_name)].map { |n|
                 n.gsub(/\W/, '')
               }.join(%w(. _).rand).downcase }
         ].rand.call

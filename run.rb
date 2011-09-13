@@ -1,9 +1,11 @@
 require 'lib/faker'
+
 require "unicode"
+$KCODE = "utf-8"
 
 puts person_name            = Faker::Name.name
 puts person_name            = Unicode::upcase("иван")
-#puts person_name            = Faker::Internet.to_eng(Unicode::upcase("Иванов"))
+puts person_name            = Faker::Internet.to_eng("Иванов")
 puts person_email           = Faker::Internet.email
 puts person_company         = Faker::Company.name
 puts person_company_slogan  = Faker::Company.bs
